@@ -82,17 +82,17 @@ export default function EnquiryForm() {
       </div>
 
       {/* Form */}
-      <div className="relative">
-          <h2 className="text-4xl font-bold pb-4 text-center">Enquiry Form</h2>
-          <p className="text-gray-600 pb-10 text-center">
+      <div className="relative px-[calc(100%-90%)]">
+          <h2 className="text-5xl font-semibold pb-10 text-center">Enquiry Form</h2>
+          <p className="text-2xl text-gray-500 pb-16 text-center">
             Complete the Form for more information, and our team will contact you soon
           </p>
 
         <form onSubmit={handleSubmit} className="p-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {formConfig.map((field) => (
               <div key={field.name} className="flex flex-col">
-                <label htmlFor={field.name} className="text-sm font-medium text-gray-700 pb-1">
+                <label htmlFor={field.name} className="text-xl font-medium pb-5">
                   {field.label}
                 </label>
                 <input
@@ -101,22 +101,22 @@ export default function EnquiryForm() {
                   name={field.name}
                   placeholder={field.placeholder}
                   onChange={handleChange}
-                  className="h-14 mt-1 block w-full rounded-md border-gray-300 bg-slate-100 shadow-sm focus:border-none focus:ring-transparent"
+                  className="h-16 pl-5 rounded-md border-gray-300 bg-slate-100 shadow-sm focus:border-none focus:ring-transparent"
                 />
               </div>
             ))}
           </div>
 
-          <div className="mt-6 flex items-center justify-between">
+          <div className="pt-16 flex items-center justify-between">
             <div className="flex items-center">
               <input
                 id="terms"
                 type="checkbox"
                 checked={agreed}
                 onChange={(e) => setAgreed(e.target.checked)}
-                className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                className="h-6 w-6 rounded bg-gray-300 text-blue-600 focus:ring-blue-500"
               />
-              <label htmlFor="terms" className="ml-2 block text-sm text-gray-700">
+              <label htmlFor="terms" className="pl-2 block text-xl text-gray-500">
                 I agree with{' '}
                 <a href="#" className="text-blue-200 hover:text-blue-400">
                   Terms of Use
@@ -130,7 +130,7 @@ export default function EnquiryForm() {
             <button
               type="submit"
               disabled={!agreed} 
-              className="flex items-center gap-2 px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#167AC6] hover:bg-blue-700 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex items-center gap-2 px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#167AC6] hover:bg-blue-700 focus:outline-none disabled:opacity-80 disabled:cursor-not-allowed"
             >
               Send Your Message
               <img src="/flight.svg" alt="" />

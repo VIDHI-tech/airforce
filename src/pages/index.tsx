@@ -1,8 +1,10 @@
 import Determined from "@/components/home/Determined";
 import EnquiryForm from "@/components/home/EnquiryForm";
 import Hero from "@/components/home/Hero";
-import Navbar from "@/components/home/Navbar";
+import InfoCards from "@/components/home/InfoCards";
+import Navbar from "@/layouts/Navbar";
 import UpcomingEvents from "@/components/home/UpcomingEvents";
+import Footer from "@/layouts/Footer";
 
 export default function HomePage() {
   
@@ -13,6 +15,8 @@ export default function HomePage() {
       <UpcomingEvents/>
       <Determined/>
       <EnquiryForm/>
+      <InfoCards/>
+      <Footer/>
     </main>
   );
 }

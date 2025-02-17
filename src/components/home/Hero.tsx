@@ -61,19 +61,19 @@ export default function Hero() {
           }`}
         >
           {/* Background Image with Overlay */}
-          <figure className="absolute h-full">
+          <figure className="absolute h-full w-full">
             <img
               src={slide.image}
               alt={slide.title}
               className="h-full w-full object-contain"
             />
             {/* Gradient Overlay */}
-            <div className="absolute bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
+            {/* <div className="absolute bg-gradient-to-r from-black/80 via-black/50 to-transparent" /> */}
           </figure>
 
           {/* Content */}
           <aside className="relative flex items-center lg:ml-20 h-full">
-              <div className="px-">
+              <div className="">
                 <h1 className='text-[#167AC6] text-lg font-bold'>
                   {slide.head}
                 </h1>

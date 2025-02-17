@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Menu, X } from 'lucide-react';
-// import { ChevronDownIcon } from "@heroicons/react/24/solid";
 
 
 const config = {
