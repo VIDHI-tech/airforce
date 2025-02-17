@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   Facebook,
   Twitter,
@@ -43,7 +42,7 @@ const getInTouchConfig = {
       icon: Mail,
       primaryText: "afaste@yahoo.co.in",
       href: "mailto:afaste@yahoo.co.in",
-    }
+    },
   ],
   block2: [
     {
@@ -60,8 +59,8 @@ const getInTouchConfig = {
       icon: Mail,
       primaryText: "airforceschool.avc@gmail.com",
       href: "mailto:airforceschool.avc@gmail.com",
-    }
-  ]
+    },
+  ],
 };
 
 // Social Media Configuration
@@ -105,7 +104,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Quick Links Section */}
           <div>
-            <h3 className="text-gray-900 text-lg font-semibold mb-4">Quick Links</h3>
+            <h3 className="text-gray-900 text-lg font-semibold mb-4">
+              Quick Links
+            </h3>
             <ul className="space-y-2">
               {quickLinksConfig.map((link) => (
                 <li key={link.name}>
@@ -123,7 +124,9 @@ const Footer = () => {
 
           {/* Get in Touch Section */}
           <div className="col-span-2">
-            <h3 className="text-gray-900 text-lg font-semibold mb-4">Get In Touch</h3>
+            <h3 className="text-gray-900 text-lg font-semibold mb-4">
+              Get In Touch
+            </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Block 1 */}
               <div className="space-y-4">
@@ -166,11 +169,17 @@ const Footer = () => {
       <div className="py-8 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between">
           <div className="text-center md:text-left mb-4 md:mb-0">
-            <p className="text-[#737373] font-bold text-xl">Made With Love By Palnesto</p>
+            <p className="text-[#737373] font-bold text-xl">
+              Made With Love By Palnesto
+            </p>
             <p className="text-gray-500">
-              © {new Date().getFullYear()} . 
-              <a href="/privacy" className="hover:text-[#167AC6]">Privacy Policy</a>
-              <a href="/terms" className="hover:text-[#167AC6] ml-2">Terms & Conditions</a>
+              © {new Date().getFullYear()} .
+              <a href="/privacy" className="hover:text-[#167AC6]">
+                Privacy Policy
+              </a>
+              <a href="/terms" className="hover:text-[#167AC6] ml-2">
+                Terms & Conditions
+              </a>
             </p>
           </div>
           <div className="flex space-x-4">
