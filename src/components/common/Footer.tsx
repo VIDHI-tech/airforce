@@ -9,7 +9,7 @@ import {
   Youtube,
 } from "lucide-react";
 
-// Quick Links Configuration
+// Quick Links
 const quickLinksConfig = [
   { name: "About Us", href: "/about" },
   { name: "Why Airforce", href: "/why-airforce" },
@@ -99,48 +99,68 @@ const socialMediaConfig = [
 
 const Footer = () => {
   return (
-    <footer className="bg-white">
-      <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+    <footer className="">
+      <div className="p-10 md:px-4 xl:px-[calc(100%-85%)]">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Quick Links Section */}
-          <div>
-            <h3 className="text-gray-900 text-lg font-semibold mb-4">
+          <span>
+            <h3 className="text-[#252B42] text-xl font-bold mb-4">
               Quick Links
             </h3>
-            <ul className="space-y-2">
-              {quickLinksConfig.map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    download={link.isDownload}
-                    className="text-gray-600 hover:text-[#167AC6] transition duration-150 ease-in-out"
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+            <div className="grid grid-cols-2 gap-4 text-[#737373] font-bold text-base">
+              {/* First half of quick links */}
+              <ul className="space-y-2">
+                {quickLinksConfig
+                  .slice(0, Math.ceil(quickLinksConfig.length / 2))
+                  .map((link) => (
+                    <li key={link.name}>
+                      <a
+                        href={link.href}
+                        download={link.isDownload}
+                        className="hover:text-[#167AC6] transition duration-150 ease-in-out"
+                      >
+                        {link.name}
+                      </a>
+                    </li>
+                  ))}
+              </ul>
+
+              {/* Second half of quick links */}
+              <ul className="space-y-2">
+                {quickLinksConfig
+                  .slice(Math.ceil(quickLinksConfig.length / 2))
+                  .map((link) => (
+                    <li key={link.name}>
+                      <a
+                        href={link.href}
+                        download={link.isDownload}
+                        className="hover:text-[#167AC6] transition duration-150 ease-in-out"
+                      >
+                        {link.name}
+                      </a>
+                    </li>
+                  ))}
+              </ul>
+            </div>
+          </span>
 
           {/* Get in Touch Section */}
-          <div className="col-span-2">
-            <h3 className="text-gray-900 text-lg font-semibold mb-4">
+          <span className="col-span-2">
+            <h3 className="text-[#252B42] text-xl font-bold mb-4">
               Get In Touch
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 font-bold text-base text-[#737373]">
               {/* Block 1 */}
               <div className="space-y-4">
                 {getInTouchConfig.block1.map((item, index) => (
-                  <div key={index}>
-                    <div className="flex items-start space-x-3">
+                  <div key={index} className="flex items-start space-x-3">
                       <item.icon className="w-5 h-5 mt-1 flex-shrink-0 text-[#167AC6]" />
                       <a
                         href={item.href}
-                        className="text-gray-600 hover:text-[#167AC6] transition duration-150 ease-in-out"
+                        className="hover:text-[#167AC6] transition duration-150 ease-in-out"
                       >
                         <p>{item.primaryText}</p>
                       </a>
-                    </div>
                   </div>
                 ))}
               </div>
@@ -153,7 +173,7 @@ const Footer = () => {
                       <item.icon className="w-5 h-5 mt-1 flex-shrink-0 text-[#167AC6]" />
                       <a
                         href={item.href}
-                        className="text-gray-600 hover:text-[#167AC6] transition duration-150 ease-in-out"
+                        className="hover:text-[#167AC6] transition duration-150 ease-in-out"
                       >
                         <p>{item.primaryText}</p>
                       </a>
@@ -162,23 +182,20 @@ const Footer = () => {
                 ))}
               </div>
             </div>
-          </div>
+          </span>
         </div>
       </div>
 
-      <div className="py-8 bg-gray-100">
+      <div className="py-8 bg-gray-100 p-10 md:px-0 xl:px-[calc(100%-85%)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between">
           <div className="text-center md:text-left mb-4 md:mb-0">
-            <p className="text-[#737373] font-bold text-xl">
+            <p className="text-[#737373] font-bold text-base">
               Made With Love By Palnesto
             </p>
-            <p className="text-gray-500">
-              © {new Date().getFullYear()} .
-              <a href="/privacy" className="hover:text-[#167AC6]">
-                Privacy Policy
-              </a>
-              <a href="/terms" className="hover:text-[#167AC6] ml-2">
-                Terms & Conditions
+            <p className="text-[#737373] font-normal">
+              @Copyright {new Date().getFullYear()}.
+              <a href="/privacy" className="hover:text-[#167AC6]">{" "}
+                Privacy Policy Terms & Conditions
               </a>
             </p>
           </div>

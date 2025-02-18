@@ -130,7 +130,7 @@ export default function EnquiryForm() {
             <button
               type="submit"
               disabled={!agreed} 
-              className="flex items-center gap-2 px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#167AC6] hover:bg-blue-700 focus:outline-none disabled:opacity-80 disabled:cursor-not-allowed"
+              className="flex items-center gap-2 px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#167AC6] focus:outline-none disabled:opacity-80 disabled:cursor-not-allowed"
             >
               Send Your Message
               <img src="/flight.svg" alt="" />

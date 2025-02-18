@@ -14,21 +14,21 @@ const infoCards: InfoCard[] = [
     id: 1,
     image: '/card1.png',
     title: 'Admission Process',
-    description: 'Our streamlined admission process ensures a smooth transition for new students joining our prestigious institution.',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     aspectRatio: '16:9'
   },
   {
     id: 2,
     image: '/card2.png',
     title: 'Fee Structure',
-    description: 'Transparent and comprehensive fee structure covering all academic and extra-curricular activities.',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     aspectRatio: '4:3'
   },
   {
     id: 3,
     image: '/card3.png',
     title: 'Gallery',
-    description: 'Explore our state-of-the-art facilities and vibrant campus life through our extensive photo gallery.',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     aspectRatio: '1:1'
   }
 ];
@@ -54,7 +54,7 @@ export default function InfoCards() {
       </div>
 
       {/* Plane Image */}
-      <div className="absolute -bottom-20 left-0 z-10 w-80 h-96">
+      <div className="absolute -bottom-20 left-0 z-10 w-64 h-72">
         <img src='/infoplane.png' className="w-full h-full object-cover" />
       </div>
 
@@ -64,29 +64,29 @@ export default function InfoCards() {
           Information on AirForce School
         </h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-7 lg:gap-20 p-10 md:px-0 xl:px-[calc(100%-85%)]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-7 lg:gap-10 p-10 md:px-0 xl:px-[calc(100%-80%)]">
           {infoCards.map((card) => (
             <div
               key={card.id}
               className="bg-white rounded-2xl shadow-xl transform transition-transform hover:-translate-y-2 justify-between flex flex-col"
             >
-              <div className='h-1/2 w-full aspect-square'>
+              <div className=''>
                 <img
                   src={card.image}
                   alt={card.title}
-                  className="w-full h-full object-cover rounded-2xl"
+                  className="w-full h-full object-cover"
                 />
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold pb-3">
+              <div className="px-6 py-4">
+                <h3 className="text-lg font-semibold pb-2">
                   {card.title}
                 </h3>
-                <p className="text-gray-600 pb-4">
+                <p className="text-gray-600 pb-4 text-xs">
                   {truncateText(card.description)}
                 </p>
-                <button className="font-bold p-2 text-base inline-flex items-center rounded-3xl border border-[#167AC6] text-[#167AC6] hover:text-blue-700">
+                <button className="font-bold px-2 text-xs inline-flex items-center rounded-3xl border border-[#167AC6] text-[#167AC6] hover:text-blue-700">
                   Learn More
-                  <ChevronRight className="pl-1 h-6 w-6" />
+                  <ChevronRight className="w-4" />
                 </button>
               </div>
             </div>

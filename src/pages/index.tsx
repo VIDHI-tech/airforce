@@ -2,6 +2,8 @@ import Determined from "@/components/home/Determined";
 import EnquiryForm from "@/components/home/EnquiryForm";
 import Hero from "@/components/home/Hero";
 import InfoCards from "@/components/home/InfoCards";
+import Newssection from "@/components/home/News";
+import ToppersSection from "@/components/home/ToppersSection";
 import UpcomingEvents from "@/components/home/UpcomingEvents";
 
 export default function HomePage() {
@@ -12,6 +14,8 @@ export default function HomePage() {
       <Determined />
       <EnquiryForm />
       <InfoCards />
+      <ToppersSection/>
+      <Newssection/>
     </main>
   );
 }

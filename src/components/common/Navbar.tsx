@@ -30,11 +30,11 @@ const config = {
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <nav className="px-[calc(100%-95%)] py-7 flex items-center justify-between">
+    <nav className="px-[calc(100%-95%)] py-5 flex items-center justify-between">
       {/* Left - Logo and School Name */}
-      <div className="flex items-center gap-4">
-        <img src={config.logoUrl} alt="School Logo" className="w-16" />
-        <span className="max-w-56 text-xl font-bold leading-none">
+      <div className="flex items-center gap-3">
+        <img src={config.logoUrl} alt="School Logo" className="w-12" />
+        <span className="max-w-36 text-sm font-bold leading-none">
           {config.schoolName}
         </span>
       </div>
@@ -44,7 +44,7 @@ const Navbar = () => {
       </button>
 
       {/* Desktop - Navigation Links */}
-      <div className="hidden lg:flex space-x-4 text-sm 2xl:text-xl">
+      <div className="hidden lg:flex space-x-4 text-xs">
         {config.navItems.map((item, index) => (
           <NavItem key={index} item={item} />
         ))}
@@ -60,11 +60,11 @@ const Navbar = () => {
       )}
       {/* Right - Buttons */}
       <div className="hidden lg:flex gap-4 font-bold ">
-        <button className="px-2 py-2 3xl:text-lg rounded-lg border-2 border-blue-300 flex items-center">
-          <img src="/Vector.svg" alt="" />
+        <button className="px-3 py-2 xl:text-xs rounded-lg border border-blue-300 flex items-center gap-1">
+          <img src="/Vector.svg" alt="" className="h-4"/>
           Download brochure
         </button>
-        <button className="bg-[#167AC6] text-white text-xs px-2 rounded">
+        <button className="bg-[#167AC6] text-white text-[0.55rem] px-2 rounded">
           Enquire Now/Pay Fee
         </button>
       </div>
@@ -97,7 +97,7 @@ const NavItem = ({ item }) => {
               <NavLink
                 key={i}
                 to={route.path}
-                className="block px-4 py-2 hover:bg-gray-200"
+                className="block px-4 py-2 hover:bg-black"
               >
                 {route.label}
               </NavLink>
@@ -109,7 +109,7 @@ const NavItem = ({ item }) => {
   }
 
   return (
-    <NavLink to={item.path} className="hover:text-gray-200">
+    <NavLink to={item.path} className="hover:font-bold">
       {item.label}
     </NavLink>
   );
