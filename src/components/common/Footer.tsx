@@ -15,7 +15,7 @@ const quickLinksConfig = [
   { name: "Why Airforce", href: "/why-airforce" },
   {
     name: "Download Brochure",
-    href: "/assets/school-brochure.pdf",
+    href: "/Application-Form.pdf",
     isDownload: true,
   },
   { name: "Transport Policy", href: "/transport" },
@@ -99,9 +99,9 @@ const socialMediaConfig = [
 
 const Footer = () => {
   return (
-    <footer className="">
+    <footer className="bg-gray-100">
       <div className="p-10 md:px-4 xl:px-[calc(100%-85%)]">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Quick Links Section */}
           <span>
             <h3 className="text-[#252B42] text-xl font-bold mb-4">
@@ -186,7 +186,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="py-8 bg-gray-100 p-10 md:px-0 xl:px-[calc(100%-85%)]">
+      <div className="py-8 p-10 md:px-0 xl:px-[calc(100%-85%)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between">
           <div className="text-center md:text-left mb-4 md:mb-0">
             <p className="text-[#737373] font-bold text-base">

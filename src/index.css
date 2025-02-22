@@ -1,69 +1,14 @@
-/* src/styles/colors.css */
-:root {
-  /* Primary (Neon/Parrot Green) Scale */
-  --primary-100: #bdff00;
-  --primary-200: #88b605;
-  --primary-300: #394a0c;
-  --primary-400: #1f250d;
-  --primary-solid-hover: #a8e600;
-  --primary-inverted-hover: #2a3313;
-
-  /* Secondary (Pinkish) Scale */
-  --secondary-100: #f54667;
-  --secondary-200: #b4354d;
-  --secondary-300: #491b26;
-  --secondary-400: #251419;
-  --secondary-solid-hover: #f42e52;
-  --secondary-inverted-hover: #3a151e;
-
-  /* gray-scale Scale */
-  --gray-scale-100: #ffffff;
-  --gray-scale-200: #aeaeb2;
-  --gray-scale-300: #595b65;
-  --gray-scale-400: #0d0d10;
-
-  --gray-scale-solid-hover: #4a4c54;
-  --gray-scale-inverted-hover: #292a31;
-
-  /* Black Scale */
-  --black-100: #0d0d10;
-  --black-200: #111114;
-  --black-300: #15161a;
-  --black-400: #1e1f24;
-
-  /* Single Color */
-  --single-color: #54f47f;
-  --blue-color: #00c2ff;
-}
-
-.dark {
-  /* Dark Theme Colors */
-  --primary-100: #a0e600; /* Updated Neon color for dark theme */
-  --primary-200: #6ea500;
-  --primary-300: #2d3d06;
-  --primary-400: #142306;
-
-  --secondary-100: #e03556;
-  --secondary-200: #8a2e40;
-  --secondary-300: #3d131b;
-  --secondary-400: #190f13;
-
-  --gray-scale-100: #f0f0f0;
-  --gray-scale-200: #9ca0ab;
-  --gray-scale-300: #4c4e5a;
-  --gray-scale-400: #1a1a1a;
-
-  --black-100: #1a1a1a;
-  --black-200: #1c1c1e;
-  --black-300: #1a1a1e;
-  --black-400: #23242a;
-
-  --single-color: #54f47f; /* Assuming singleColor remains the same */
+@import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+.allura-regular {
+  font-family: "Allura", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @layer base {
   :root {
     --radius: 0.5rem;

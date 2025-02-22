@@ -82,9 +82,9 @@ export default function EnquiryForm() {
       </div>
 
       {/* Form */}
-      <div className="relative px-[calc(100%-90%)]">
+      <div className="relative md:px-[calc(100%-90%)]">
           <h2 className="text-5xl font-semibold pb-10 text-center">Enquiry Form</h2>
-          <p className="text-2xl text-gray-500 pb-16 text-center">
+          <p className="md:text-2xl text-gray-500 pb-16 text-center">
             Complete the Form for more information, and our team will contact you soon
           </p>
 
@@ -97,17 +97,18 @@ export default function EnquiryForm() {
                 </label>
                 <input
                   type={field.type}
+                  required
                   id={field.name}
                   name={field.name}
                   placeholder={field.placeholder}
                   onChange={handleChange}
-                  className="h-16 pl-5 rounded-md border-gray-300 bg-slate-100 shadow-sm focus:border-none focus:ring-transparent"
+                  className="h-12 xl:h-16 pl-5 rounded-md border-gray-300 bg-slate-100 shadow-sm focus:border-none focus:ring-transparent"
                 />
               </div>
             ))}
           </div>
 
-          <div className="pt-16 flex items-center justify-between">
+          <div className="pt-16 flex flex-col md:flex-row gap-y-5 items-center justify-between">
             <div className="flex items-center">
               <input
                 id="terms"
@@ -116,7 +117,7 @@ export default function EnquiryForm() {
                 onChange={(e) => setAgreed(e.target.checked)}
                 className="h-6 w-6 rounded bg-gray-300 text-blue-600 focus:ring-blue-500"
               />
-              <label htmlFor="terms" className="pl-2 block text-xl text-gray-500">
+              <label htmlFor="terms" className="pl-2 block xl:text-xl text-gray-500">
                 I agree with{' '}
                 <a href="#" className="text-blue-200 hover:text-blue-400">
                   Terms of Use

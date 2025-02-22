@@ -11,40 +11,44 @@ const config = {
       type: "navgroup",
       label: "About",
       routes: [
-        { label: "Our School", path: "/about/ourschool" },
-        { label: "Our History", path: "/about/ourhistory" },
-        { label: "Our Management", path: "/about/management" },
-        { label: "Our Vision & Mision", path: "/about/vision&mission" },
-        { label: "Our Message Desk", path: "/about/messagedesk" },
+        { label: "Our School", path: "/about" },
+        { label: "Our History", path: "/about#ourhistory" },
+        { label: "Our Management", path: "/about#management" },
+        { label: "Our Vision & Mision", path: "/about#visionmission" },
+        { label: "Our Message Desk", path: "/about#messagedesk" },
       ],
     },
-    { type: "navlink", label: "Why AFSE", path: "/whyAFSE" },
+    { type: "navlink", label: "Academics", path: "/academics" },
+    { type: "navlink", label: "Infrastructure", path: "/infrastructure" },
+    { type: "navlink", label: "Gallery", path: "/gallery" },
+    { type: "navlink", label: "CBSE", path: "/cbse" },
     { type: "navlink", label: "Admissions", path: "/admissions" },
-    { type: "navlink", label: "Location", path: "/location" },
-    { type: "navlink", label: "Careers", path: "/career" },
-    { type: "navlink", label: "Blogs", path: "/career" },
+    { type: "navlink", label: "Achievements", path: "/achievements" },
+    { type: "navlink", label: "Careers", path: "/careers" },
     { type: "navlink", label: "Alumni", path: "/alumni" },
+    { type: "navlink", label: "Tender", path: "/tender" },
+    { type: "navlink", label: "Blogs", path: "/blogs" },
   ],
 };
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <nav className="px-[calc(100%-95%)] py-5 flex items-center justify-between">
+    <nav className="px-6 2xl:px-[calc(100%-97%)] py-5 flex items-center justify-between">
       {/* Left - Logo and School Name */}
       <div className="flex items-center gap-3">
-        <img src={config.logoUrl} alt="School Logo" className="w-12" />
-        <span className="max-w-36 text-sm font-bold leading-none">
+        <img src={config.logoUrl} alt="School Logo" className="w-12 2xl:w-16" />
+        <span className="max-w-36 2xl:max-w-52 text-sm 2xl:text-lg font-bold leading-none">
           {config.schoolName}
         </span>
       </div>
       {/* Mobile Menu Button */}
-      <button className="lg:hidden" onClick={() => setMenuOpen(!menuOpen)}>
+      <button className="xl:hidden" onClick={() => setMenuOpen(!menuOpen)}>
         {menuOpen ? <X className="h-8 w-8" /> : <Menu className="h-8 w-8" />}
       </button>
 
       {/* Desktop - Navigation Links */}
-      <div className="hidden lg:flex space-x-4 text-xs">
+      <div className="hidden xl:flex space-x-4 2xl:text-lg">
         {config.navItems.map((item, index) => (
           <NavItem key={index} item={item} />
         ))}
@@ -52,19 +56,19 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="absolute top-24 left-0 w-full bg-blue-50 shadow-md rounded-lg flex flex-col gap-y-2 items-center lg:hidden py-5 font-semibold z-10">
+        <div className="absolute top-24 left-0 w-full bg-blue-50 shadow-md rounded-lg flex flex-col gap-y-2 items-center xl:hidden py-5 font-semibold z-10">
           {config.navItems.map((item, index) => (
             <NavItem key={index} item={item} />
           ))}
         </div>
       )}
       {/* Right - Buttons */}
-      <div className="hidden lg:flex gap-4 font-bold ">
-        <button className="px-3 py-2 xl:text-xs rounded-lg border border-blue-300 flex items-center gap-1">
+      <div className="hidden xl:flex flex-col gap-2 font-bold">
+        <button className="p-3 xl:text-xs rounded-lg border border-blue-300 flex items-center gap-1">
           <img src="/Vector.svg" alt="" className="h-4"/>
           Download brochure
         </button>
-        <button className="bg-[#167AC6] text-white text-[0.55rem] px-2 rounded">
+        <button className="bg-[#167AC6] text-white text-xs p-3 rounded">
           Enquire Now/Pay Fee
         </button>
       </div>
@@ -82,7 +86,7 @@ const NavItem = ({ item }) => {
           // onMouseEnter={() => setOpen(true)}
           // onMouseLeave={() => setOpen(false)}
           onClick={() => setOpen(!open)}
-          className="flex items-center gap-1 hover:text-gray-900"
+          className="flex items-center gap-1"
         >
           {item.label}
           {/* <ChevronDownIcon className="h-5 w-5" /> */}
@@ -94,13 +98,13 @@ const NavItem = ({ item }) => {
             onMouseLeave={() => setOpen(false)}
           >
             {item.routes.map((route, i) => (
-              <NavLink
+              <a
                 key={i}
-                to={route.path}
-                className="block px-4 py-2 hover:bg-black"
+                href={route.path}
+                className="block px-4 py-2"
               >
                 {route.label}
-              </NavLink>
+              </a>
             ))}
           </div>
         )}
@@ -109,7 +113,7 @@ const NavItem = ({ item }) => {
   }
 
   return (
-    <NavLink to={item.path} className="hover:font-bold">
+    <NavLink to={item.path} className="hover:font-semibold">
       {item.label}
     </NavLink>
   );

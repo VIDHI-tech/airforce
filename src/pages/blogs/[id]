@@ -1,0 +1,89 @@
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+
+const blogData = [
+  {
+    id: "1",
+    image: "/news1.png",
+    title: "ASTE takes pride in sharing the happy news",
+    date: "August 18, 2022",
+    readTime: "4 Min",
+    content: [
+      "ASTE is proud to announce the latest achievements and progress in various fields...",
+      "We have seen remarkable contributions from our students and faculty, leading to groundbreaking success.",
+    ],
+    extraImages: ["/extra1.png", "/extra2.png"],
+  },
+  {
+    id: "2",
+    image: "/news2.png",
+    title: "Cold Brew Coffee, How to Drink Cold Coffee is More Enjoyable",
+    date: "August 18, 2022",
+    readTime: "4 Min",
+    content: [
+      "Cold brew coffee has taken the world by storm...",
+      "Here are some tips to make the most out of your cold coffee experience!",
+    ],
+    extraImages: ["/extra3.png", "/extra4.png"],
+  },
+  {
+    id: "3",
+    image: "/news3.png",
+    title:
+      "Celebrating our centum scorers of Class X and XII and the outstanding 100% results for both classes!",
+    date: "August 18, 2022",
+    readTime: "4 Min",
+    content: [
+      "A big round of applause to our centum scorers!",
+      "Their hard work and dedication have led to 100% outstanding results.",
+    ],
+    extraImages: ["/extra5.png", "/extra6.png"],
+  },
+];
+
+const BlogDetails = () => {
+  const { id } = useParams(); // Get blog ID from URL
+  const [blog, setBlog] = useState(null);
+
+  useEffect(() => {
+    const foundBlog = blogData.find((b) => b.id === id);
+    setBlog(foundBlog || null);
+  }, [id]);
+
+  if (!blog) {
+    return <p className="text-center text-gray-500 text-lg">Blog not found.</p>;
+  }
+
+  return (
+    <section className="py-10 px-4 xl:px-10 2xl:px-[calc(100%-85%)]">
+      {/* Blog Image and Title */}
+      <figure className="w-full h-96">
+        <img
+          src={blog.image}
+          alt={blog.title}
+          className="w-full h-full object-cover rounded-md"
+        />
+      </figure>
+      <h1 className="text-4xl font-bold mt-6">{blog.title}</h1>
+      <p className="text-gray-500 text-lg mt-2">
+        {blog.readTime} • {blog.date}
+      </p>
+
+      {/* Blog Content */}
+      <div className="mt-6 space-y-4">
+        {blog.content.map((paragraph, index) => (
+          <p key={index} className="text-lg text-gray-700">{paragraph}</p>
+        ))}
+      </div>
+
+      {/* Extra Images */}
+      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4">
+        {blog.extraImages.map((img, index) => (
+          <img key={index} src={img} alt="Extra" className="rounded-md" />
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default BlogDetails;

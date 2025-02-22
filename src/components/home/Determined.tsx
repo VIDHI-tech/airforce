@@ -14,7 +14,7 @@ const Determined = () => {
 
   return (
     <div className="flex flex-col lg:flex-row w-full">
-      <section className="bg-[#2B8FDB] text-white py-7 px-5 2xl:pl-32 2xl:pr-14 flex flex-col justify-center lg:w-2/3">
+      <section className="text-center lg:text-start bg-[#2B8FDB] text-white py-7 px-5 2xl:pl-32 2xl:pr-14 flex flex-col justify-center lg:w-2/3">
         <h1 className="text-3xl lg:text-4xl 2xl:text-5xl font-semibold pb-4 max-w-3xl">
           {determinedConfig.title}
         </h1>
