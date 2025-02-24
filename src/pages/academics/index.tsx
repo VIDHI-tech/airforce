@@ -20,6 +20,14 @@ const index: React.FC = () => {
           </h3>
         </span>
       </section>
+      <section>
+        <div>
+
+        </div>
+        <div>
+          <h1></h1>
+        </div>
+      </section>
     </>
   );
 };
