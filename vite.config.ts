@@ -1,19 +1,24 @@
 import react from "@vitejs/plugin-react-swc";
 import path from "node:path";
-import { defineConfig } from "vite";
+import { defineConfig, loadEnv, ConfigEnv } from "vite";
 import Pages from "vite-plugin-pages";
-import svgr from "vite-plugin-svgr";
 
-export default defineConfig({
-  plugins: [react(), Pages(), svgr()],
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
+export default defineConfig(({ mode }: ConfigEnv) => {
+  const env = loadEnv(mode, process.cwd(), "VITE_");
+  return {
+    plugins: [react(), Pages()],
+    resolve: {
+      alias: {
+        "@": path.resolve(__dirname, "./src"),
+      },
     },
-  },
-  server: {
-    proxy: {
-      "/api": "https://grwb-server-v2-6xdq5.ondigitalocean.app",
-    },
-  },
+    server:
+      env.VITE_MODE === "dev"
+        ? {
+            proxy: {
+              "/api": env.VITE_BACKEND_URL,
+            },
+          }
+        : undefined,
+  };
 });

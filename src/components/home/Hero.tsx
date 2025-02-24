@@ -1,6 +1,6 @@
-
-import { useState, useEffect } from 'react';
-import Button from '../common/Button';
+import { useState, useEffect } from "react";
+import Button from "../common/Button";
+import { useApiQuery } from "@/hooks/useApiQuery";
 
 export interface CarouselSlide {
   id: number;
@@ -45,6 +45,8 @@ const carouselConfig = [
 ];
 
 export default function Hero() {
+  const { data } = useApiQuery("/health-check");
+  console.log("data", data);
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
@@ -65,7 +67,6 @@ export default function Hero() {
             currentSlide === index ? "opacity-100" : "opacity-0"
           }`}
         >
-         
           <figure className="absolute inset-0 h-full w-full">
             <img
               src={slide.image}
@@ -78,19 +79,19 @@ export default function Hero() {
 
           {/* Content */}
           <aside className="relative flex flex-col justify-center items-center text-center md:text-left md:items-start px-6 md:px-16 lg:px-20 xl:px-28 h-full text-white max-w-4xl">
-              <h1 className="text-[#167AC6] text-lg font-bold">{slide.head}</h1>
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold pb-4">
-                {slide.title}
-              </h1>
-              <p className="text-base md:text-lg text-[#A3ABB6] pb-8">
-                {slide.subtitle}
-              </p>
-              <div className="flex  gap-4">
-                <Button label="Enroll Now" iconSrc="/flight.svg" />
-                <button className="font-bold text-white border-2 border-white hover:border-gray-500 px-5 md:px-12 py-3 rounded-lg transition-colors">
-                  Our School
-                </button>
-              </div> 
+            <h1 className="text-[#167AC6] text-lg font-bold">{slide.head}</h1>
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold pb-4">
+              {slide.title}
+            </h1>
+            <p className="text-base md:text-lg text-[#A3ABB6] pb-8">
+              {slide.subtitle}
+            </p>
+            <div className="flex  gap-4">
+              <Button label="Enroll Now" iconSrc="/flight.svg" />
+              <button className="font-bold text-white border-2 border-white hover:border-gray-500 px-5 md:px-12 py-3 rounded-lg transition-colors">
+                Our School
+              </button>
+            </div>
           </aside>
         </div>
       ))}
